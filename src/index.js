@@ -25,7 +25,7 @@ class App extends React.Component {
     console.log("My component was updated");
   }
 
-  render() {
+  renderContent() {
     if (this.state.errorMessage && !this.state.lat) {
       return <div>Error: {this.state.errorMessage}</div>;
     }
@@ -35,6 +35,10 @@ class App extends React.Component {
     }
 
     return <LoadingSpinner message="Please accept location request" />;
+  }
+
+  render() {
+    return <div>{this.renderContent()}</div>;
   }
 }
 
